@@ -1,6 +1,6 @@
 # DotFiles
 
-This repository manages dotfiles of my softwares.
+This repository manages dotfiles by using stow.
 
 ## Guide
 

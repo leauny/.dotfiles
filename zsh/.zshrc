@@ -121,6 +121,7 @@ source $ZSH/oh-my-zsh.sh
 alias sudo='sudo ' # Helps sys continue check if the following command has been aliased. (because of the space at the end os the alias command)
 alias cp="cp -i"
 alias rm="rm -i" # prompt once
+alias vi="vim "
 alias vzsh="vim ~/.zshrc"
 alias szsh="source ~/.zshrc"
 alias .="cd ."
