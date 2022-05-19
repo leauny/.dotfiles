@@ -4,17 +4,26 @@ This repository manages dotfiles by using stow.
 
 ## Guide
 
-### zsh
+command
 
-- `$HOME/.zshrc` ---> `zsh/zshrc`
-- `$HOME/.p10k.zsh` ---> `zsh/themes/p10k.zsh`
+```shell
+stow -t <TargetDir> <PackageName>
 
-### clash
+# eg:
 
-- `$HOME/.config/clash/*` ---> `clash/*`
+stow -t ~ zsh
+```
 
+## Running Dir
 
-### proxychains
+The default folder would be $HOME if the folder with no extra expression.
 
-- `$HOME/.config/proxy/linuxproxy` ---> `proxychains/linuxproxy`
-- `$HOME/.config/proxy/winuxproxy` ---> `proxychains/winuxproxy`
+When need stowing in different position, the folder names' tail would end by '@'. Then you should check the target directory in this file. 
+
+### $HOME | ~
+
+- zsh
+- tmux
+- clash
+- proxychans
+
