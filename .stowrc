@@ -1,0 +1,4 @@
+# This file helps stow to set the default options.
+
+
+--target=$HOME
