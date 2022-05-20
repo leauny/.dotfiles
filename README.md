@@ -6,6 +6,8 @@ This repository manages dotfiles by using stow.
 
 command
 
+> 详细使用方法请查看[StowIntro](./StowIntro.md)
+
 ```shell
 stow -t <TargetDir> <PackageName>
 
