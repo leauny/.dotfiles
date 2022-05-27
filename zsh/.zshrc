@@ -124,6 +124,7 @@ alias rm="rm -i" # prompt once
 alias vi="vim "
 alias vzsh="vim ~/.zshrc"
 alias szsh="source ~/.zshrc"
+alias vvim="vim ~/.vim/vimrc" 
 alias .="cd ."
 alias ..="cd .."
 alias his="cat ~/.zsh_history | grep "
