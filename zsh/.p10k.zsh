@@ -961,7 +961,7 @@
   #
   # CONDA_PROMPT_MODIFIER can be configured with the following command:
   #
-  #   conda config --set env_prompt '({default_env}) '
+  #     conda config --set env_prompt '({default_env}) '
   #
   # The last argument is a Python format string that can use the following variables:
   #
@@ -1712,7 +1712,7 @@
   #   - always:   Trim down prompt when accepting a command line.
   #   - same-dir: Trim down prompt when accepting a command line unless this is the first command
   #               typed after changing current working directory.
-  typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=always
+  typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=same-dir # 修改提示类型
 
   # Instant prompt mode.
   #

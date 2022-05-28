@@ -140,9 +140,12 @@ alias clashon="nohup clash -f ~/.config/clash/paoluyun.yaml > ~/.config/clash/no
 alias clashlog="tail -n 10 -f ~/.config/clash/nohupClash.log"
 alias winproxy="proxychains4 -f ~/.config/proxy/winproxy.conf "
 alias linproxy="proxychains4 -f ~/.config/proxy/linproxy.conf " 
-alias clashupdate="wget -O ~/.config/clash/paoluyun.yaml https://api.bianyuan.xyz/sub\?target\=clash\&udp\=true\&new_name\=true\&emoji\=true\&config\=https%3A%2F%2Fraw.githubusercontent.com%2FHynoR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online.ini\&filename\=Paoluz_Cat4Tj\&url\=https://api-goodtek.loliloli.live/link/5lDbf3iAZs9hhIv9\?list\=kitsunebi"
+alias clashupdate="~/.config/clash/paoluyun.sh"
 alias d2l="conda activate d2l-zh"
 alias jn="conda activate d2l-zh && nohup jupyter notebook > ~/.log/jupyter.log &"
+
+# 关闭功能, 否则printf后会出现百分号
+# unsetopt prompt_cr prompt_sp
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
