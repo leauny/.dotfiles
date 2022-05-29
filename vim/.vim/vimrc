@@ -5,6 +5,7 @@ set nocompatible
 filetype plugin indent on  " Load plugins according to detected filetype.
 syntax on                  " Enable syntax highlighting.
 
+set mouse=a                " 鼠标模式
 set nu                     " Set number on
 set relativenumber         " 相对行号
 set autoindent             " Indent according to previous line.
@@ -52,8 +53,15 @@ else
   let &listchars = 'tab:> ,extends:>,precedes:<,nbsp:.'
 endif
 
+" 显示中文帮助
 
-""" ---------  Map -----------
+if version >= 603
+    set helplang=cn
+    set encoding=utf-8
+endif
+
+
+""" <<<<<<<<<<<<<<<<<<< End Map >>>>>>>>>>>>>>>>>>>>>>>>
 
 " 设置LEADER
 let mapleader=" "
@@ -77,4 +85,45 @@ map - Nzz
 
 " 取消查找高亮
 noremap <LEADER><CR> :noh<CR>
-""" --------- EMap -----------
+
+
+""" <<<<<<<<<<<<<<<<<<< Plugin >>>>>>>>>>>>>>>>>>>>>>>>
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" 开始插件安装
+call plug#begin('~/.vim/plugged')
+
+" 状态行
+Plug 'vim-airline/vim-airline'
+" 主题
+Plug 'connorholyday/vim-snazzy'
+Plug 'arcticicestudio/nord-vim'
+" 自动补全
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" 结束插件安装
+call plug#end()
+
+""" <<<<<<<<<<<<<<<<<<<< Plugin Config >>>>>>>>>>>>>>>>>>>>
+
+"" coc.nvim
+
+" 可以使用<TAB>键选择自动补全提示
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+""" <<<<<<<<<<<<<<<<<<< Appearance >>>>>>>>>>>>>>>>>>>
+
+"" Snazzy
+" 设置透明
+" let g:SnazzyTransparent = 0
+" 设置主题
+" color snazzy
+
+"" nord
+
+color nord
+
+
+
+
+
+
