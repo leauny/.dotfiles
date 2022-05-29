@@ -80,9 +80,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
-	zsh-autosuggestions
-	zsh-syntax-highlighting	
+    git
+    extract
+    tmux
+    sudo
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
 ## Plugins' command
@@ -92,6 +95,11 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+# 默认启动tmux
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default
+fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -133,7 +141,7 @@ alias ga="git add "
 alias gclone="git clone "
 alias gc="git commit -m "
 alias glog="git log "
-
+alias cat="bat "    # 需要安装bat软件
 
 # Additional custome software command
 alias clashon="nohup clash -f ~/.config/clash/paoluyun.yaml > ~/.config/clash/nohupClash.log &"
