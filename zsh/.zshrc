@@ -141,7 +141,7 @@ alias gs="git status"
 alias ga="git add "
 alias gclone="git clone "
 alias gc="git commit -m "
-alias glog="git log "
+alias glog="git log --oneline --graph --all --abbrev"
 alias cat="bat "    # 需要安装bat软件
 
 # Additional custome software command
