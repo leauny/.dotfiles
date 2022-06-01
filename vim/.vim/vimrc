@@ -1,129 +1,42 @@
-" You want Vim, not vi. When Vim finds a vimrc, 'nocompatible' is set anyway.
-" We set it explicitely to make our position clear!
-set nocompatible
+" This is vim config file
+" 基本结构如图
+"vimrc
+"subconfig{
+"	basic.vim
+"	function.vim
+"	mapping.vim
+"	plugin.vim
+"	plugins{
+"		...<plugin config>
+"	}
+"}
 
-filetype plugin indent on  " Load plugins according to detected filetype.
-syntax on                  " Enable syntax highlighting.
+" ------------------------------------------------------
+"                        基础设置 
+" ------------------------------------------------------
 
-set mouse=a                " 鼠标模式
-set nu                     " Set number on
-set relativenumber         " 相对行号
-set autoindent             " Indent according to previous line.
-set cindent                " C语言缩进
-set expandtab              " Use spaces instead of tabs.
-set softtabstop =4         " Tab key indents by 4 spaces.
-set shiftwidth  =4         " >> indents by 4 spaces.
-set shiftround             " >> indents to next multiple of 'shiftwidth'.
+" 用于内置基础命令的设置
 
-set backspace   =indent,eol,start  " Make backspace work as you would expect.
-set hidden                 " Switch between buffers without having to save first.
-set laststatus  =2         " Always show statusline.
-set display     =lastline  " Show as much as possible of the last line.
+so $HOME/.vim/subconfig/basic.vim
 
-set showmode               " Show current mode in command-line.
-set showcmd                " Show already typed keys when more are expected.
+" ------------------------------------------------------
+"                       自定义功能
+" ------------------------------------------------------
 
-" 查找中高亮
-set incsearch              
-" 查找高亮
-set hlsearch 
-" 忽略大小写
-set ignorecase
-" 智能大小写
-set smartcase
+" 用于存储通过自定义函数实现的功能
+so $HOME/.vim/subconfig/function.vim
 
-set ttyfast                " Faster redrawing.
-set lazyredraw             " Only redraw when necessary.
+" ------------------------------------------------------
+"                        按键映射 
+" ------------------------------------------------------
 
-set splitbelow             " Open new windows below the current window.
-set splitright             " Open new windows right of the current window.
+" 用于存储按键映射mapping设置
+so $HOME/.vim/subconfig/mapping.vim
 
-set cursorline             " 游标线
-set wrapscan               " Searches wrap around end-of-file.(自动换行)
-set report      =0         " Always report changed lines.
-set synmaxcol   =200       " Only highlight the first 200 columns.
+" ------------------------------------------------------
+"                        插件相关
+" ------------------------------------------------------
 
-set list                   " Show non-printable characters.
-
-set wildmenu               " 显示提示
-
-if has('multi_byte') && &encoding ==# 'utf-8'
-  let &listchars = 'tab:▸ ,extends:❯,precedes:❮,nbsp:±'
-else
-  let &listchars = 'tab:> ,extends:>,precedes:<,nbsp:.'
-endif
-
-" 显示中文帮助
-
-if version >= 603
-    set helplang=cn
-    set encoding=utf-8
-endif
-
-
-""" <<<<<<<<<<<<<<<<<<< End Map >>>>>>>>>>>>>>>>>>>>>>>>
-
-" 设置LEADER
-let mapleader=" "
-
-" for practice
-map <LEFT> <NOP>
-map <RIGHT> <NOP>
-map <UP> <NOP>
-map <DOWN> <NOP>
-
-" S保存文件
-map S :w<CR>
-" Q退出VIM
-map Q :q<CR>
-" s键置空
-map s  <NOP>
-
-" 向下查找并放到屏幕中间
-map = nzz
-map - Nzz
-
-" 取消查找高亮
-noremap <LEADER><CR> :noh<CR>
-
-
-""" <<<<<<<<<<<<<<<<<<< Plugin >>>>>>>>>>>>>>>>>>>>>>>>
-" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-" 开始插件安装
-call plug#begin('~/.vim/plugged')
-
-" 状态行
-Plug 'vim-airline/vim-airline'
-" 主题
-Plug 'connorholyday/vim-snazzy'
-Plug 'arcticicestudio/nord-vim'
-" 自动补全
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" 结束插件安装
-call plug#end()
-
-""" <<<<<<<<<<<<<<<<<<<< Plugin Config >>>>>>>>>>>>>>>>>>>>
-
-"" coc.nvim
-
-" 可以使用<TAB>键选择自动补全提示
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-""" <<<<<<<<<<<<<<<<<<< Appearance >>>>>>>>>>>>>>>>>>>
-
-"" Snazzy
-" 设置透明
-" let g:SnazzyTransparent = 0
-" 设置主题
-" color snazzy
-
-"" nord
-
-color nord
-
-
-
-
-
+" 用于加载插件, 具体插件的配置处于同一文件中, 以<插件名>.vim格式命名
+so $HOME/.vim/subconfig/plugin.vim
 
