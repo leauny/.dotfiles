@@ -1,7 +1,5 @@
 # 默认启动tmux
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach -t default || tmux new -s default
-fi
+source $HOME/.config/zsh/tmux.zsh
 
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -24,6 +22,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -105,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -117,59 +116,17 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# 别名 Alias
 
-# Common command
-alias sudo='sudo ' # Helps sys continue check if the following command has been aliased. (because of the space at the end os the alias command)
-alias cp="cp -i"
-alias rm="rm -i" # prompt once
-alias vi="vim "
-alias vzsh="vim ~/.zshrc"
-alias szsh="source ~/.zshrc"
-alias vvim="vim ~/.vim/vimrc" 
-alias .="cd ."
-alias ..="cd .."
-alias his="cat ~/.zsh_history | grep "
-alias gs="git status"
-alias ga="git add "
-alias gclone="git clone "
-alias gc="git commit -m "
-alias glog="git log --oneline --graph --all --abbrev"
-alias cat="bat "    # 需要安装bat软件
+source $HOME/.config/zsh/alias.zsh
 
-# Additional custome software command
-alias clashon="nohup clash -f ~/.config/clash/paoluyun.yaml > ~/.config/clash/nohupClash.log &"
-alias clashlog="tail -n 10 -f ~/.config/clash/nohupClash.log"
-alias winproxy="proxychains4 -f ~/.config/proxy/winproxy.conf "
-alias linproxy="proxychains4 -f ~/.config/proxy/linproxy.conf " 
-alias clashupdate="~/.config/clash/paoluyun.sh"
-alias d2l="conda activate d2l-zh"
-alias jn="conda activate d2l-zh && nohup jupyter notebook > ~/.log/jupyter.log &"
+# 加载Conda
+
+source $HOME/.config/zsh/conda.zsh
+
 
 # 关闭功能, 否则printf后会出现百分号
-# unsetopt prompt_cr prompt_sp
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/opt/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+unsetopt prompt_cr prompt_sp
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
