@@ -4,15 +4,17 @@ This repository manages dotfiles by using stow.
 
 ## Guide
 
-command
+### Command
 
 > 详细使用方法请查看[StowIntro](./StowIntro.md)
 
 ```shell
 stow -t <TargetDir> <PackageName>
+```
 
-# eg:
+> 例: 将zsh包安装到$HOME为目标的文件夹中
 
+```shell
 stow -t ~ zsh
 ```
 
