@@ -23,8 +23,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/tagbar'
 " 浏览文件编辑历史
 Plug 'mbbill/undotree'
-" Markdown预览
+" Markdown预览 (图形界面)
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+" Markdown预览 (命令行界面)
+" Plug 'ellisonleao/glow.nvim', {'branch': 'main'} " for nvim
+Plug 'jclsn/glow.vim' " for vim
 " 多光标
 Plug 'mg979/vim-visual-multi'
 " 用指定符号包裹选中的内容
@@ -33,6 +36,10 @@ Plug 'tpope/vim-surround'
 Plug 'gcmt/wildfire.vim'
 " 文件查找
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" 复制高亮
+Plug 'machakann/vim-highlightedyank'
+" 快捷注释
+Plug 'preservim/nerdcommenter'
 
 
 
@@ -51,7 +58,7 @@ call plug#end()
 
 
 " --------------------------------------------------------------
-"							加载插件 
+"						加载后置插件 
 " --------------------------------------------------------------
 
 so $HOME/.vim/subconfig/plugins/nord-vim.vim
@@ -63,4 +70,7 @@ so $HOME/.vim/subconfig/plugins/nerdtree.vim
 so $HOME/.vim/subconfig/plugins/coc.nvim.vim
 so $HOME/.vim/subconfig/plugins/tagbar.vim
 so $HOME/.vim/subconfig/plugins/undotree.vim
+so $HOME/.vim/subconfig/plugins/glow.vim.vim
+" Need to load after the theme plugins
+so $HOME/.vim/subconfig/plugins/vim-highlightedyank.vim
 
