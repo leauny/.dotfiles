@@ -32,6 +32,7 @@ alias linproxy="proxychains4 -f ~/.config/proxy/linproxy.conf "
 alias clashupdate="~/.config/clash/paoluyun.sh"
 alias d2l="conda activate d2l-zh"
 alias jn="conda activate d2l-zh && nohup jupyter notebook > ~/.log/jupyter.log &"
+alias sstow="stow --dir=$DIR_OF_DOTFILES "
 
 
 

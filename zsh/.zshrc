@@ -9,6 +9,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# export the dotfiles directory
+export DIR_OF_DOTFILES="$HOME/.dotfiles"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -120,9 +123,14 @@ export LANG=en_US.UTF-8
 
 source $HOME/.config/zsh/alias.zsh
 
-# 加载Conda
+# ---------------------------------------------------------------
+#                             应用配置加载
+# ---------------------------------------------------------------
 
+# 加载Conda
 source $HOME/.config/zsh/conda.zsh
+# 加载fzf
+source $HOME/.config/zsh/fzf.zsh
 
 
 # 关闭功能, 否则printf后会出现百分号
