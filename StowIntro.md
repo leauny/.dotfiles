@@ -1,6 +1,6 @@
 Open the link  or use command `info stow` to see the [Official English Doc](https://www.gnu.org/software/stow/manual/stow.html).
 
-返回[README](../README.md)
+返回[README](./README.md)
 
 注: 此工具最初的目的是为了管理软件. 而非用于dotfiles的管理. 因此有的功能并不使用于配置文件管理的情形, 如[[#目标维护]].
 
