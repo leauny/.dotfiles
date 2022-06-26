@@ -1,5 +1,14 @@
+# 自定义配置, 用于控制功能的开关 
+# 配置模板位于 ~/.config/zsh/customize_example.zsh, 用于控制功能的开关 
+source $HOME/.config/zsh/customize.zsh
+
+# default user is $CUST_USER
+
 # 默认启动tmux
-source $HOME/.config/zsh/tmux.zsh
+if [ $CUST_TMUX = ON ]
+then
+    source $HOME/.config/zsh/tmux.zsh
+fi
 
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -95,7 +104,8 @@ plugins=(
 
 ## Plugins' command
 # autojump
-[[ -s /home/leauny/.autojump/etc/profile.d/autojump.sh ]] && source /home/leauny/.autojump/etc/profile.d/autojump.sh
+[[ -s /home/$CUST_USER/.autojump/etc/profile.d/autojump.sh ]] && source /home/$CUST_USER/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -U
 
 source $ZSH/oh-my-zsh.sh
 
