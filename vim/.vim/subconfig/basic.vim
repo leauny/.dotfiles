@@ -45,6 +45,7 @@ set ignorecase
 " 智能大小写
 set smartcase
 
+set scrolloff=8            " 滚动时下方总有几行可见
 set ttyfast                " Faster redrawing.
 set lazyredraw             " Only redraw when necessary.
 

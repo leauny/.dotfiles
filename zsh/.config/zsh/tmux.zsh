@@ -10,10 +10,8 @@ if [[ $? -ne 0 ]]; then
     TMUX='' tmux new-session -d -s "$session_name"
 fi
 
-# 3. Attach if outside of tmux, switch if you're in tmux.
+# 3. Attach if outside of tmux.
 if [[ -z "$TMUX" ]]; then
     tmux attach -t "$session_name"
-else
-    tmux switch-client -t "$session_name"
 fi
 

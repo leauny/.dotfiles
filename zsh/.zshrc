@@ -10,13 +10,15 @@ then
     source $HOME/.config/zsh/tmux.zsh
 fi
 
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+# export the dotfiles directory
+export DIR_OF_DOTFILES="$HOME/.dotfiles"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -117,11 +119,11 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='vim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -130,9 +132,14 @@ export LANG=en_US.UTF-8
 
 source $HOME/.config/zsh/alias.zsh
 
-# 加载Conda
+# ---------------------------------------------------------------
+#                             应用配置加载
+# ---------------------------------------------------------------
 
+# 加载Conda
 source $HOME/.config/zsh/conda.zsh
+# 加载fzf
+[ -f ~/.config/zsh/fzf.zsh ] && source ~/.config/zsh/fzf.zsh  
 
 
 # 关闭功能, 否则printf后会出现百分号

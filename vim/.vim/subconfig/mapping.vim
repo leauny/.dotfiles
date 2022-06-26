@@ -63,6 +63,8 @@ noremap tn :-tabnext<CR>
 " 切换上一个标签
 noremap tu :+tabnext<CR>
 
+" 按两次<LEADER>后跳转到下一个'<++>'格式的锚点并且编辑它
+map <LEADER><LEADER> <ESC>/<++><CR>:nohlsearch<CR>c4l
 
 
 
