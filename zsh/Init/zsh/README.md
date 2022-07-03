@@ -24,6 +24,8 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools
 
 1. 安装字体
 
+修改文件`/etc/locale.gen`, 将`en_US.UTF-8 UTF-8`和`zh_CN.UTF-8 UTF-8`注释删除, 接着执行`locale-gen`命令生成. (可能需要安装fc软件, `sudo pacman -S fontconfig`)
+
 ```shell
 # 将字体文件存入字体文件夹
 
@@ -31,10 +33,10 @@ mv MesloLGS* /usr/share/fonts/TTF/
 
 ```
 
-2. 安装P10K
+2. 安装P10K 
 
-```shell
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```shell 
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k 
 ```
 
 3. 启用主题
@@ -57,7 +59,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ## Plugins
 
-### zsh-syntax-highlighting
+### zsh-autosuggestions
 
 1. Clone this repository into `$ZSH_CUSTOM/plugins` (by default `~/.oh-my-zsh/custom/plugins`)
 

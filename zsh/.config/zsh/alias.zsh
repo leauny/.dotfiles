@@ -23,6 +23,7 @@ alias ga="git add "
 alias gclone="git clone "
 alias gc="git commit -m "
 alias glog="git log --oneline --graph --all --abbrev"
+alias truecolor="curl -s https://raw.githubusercontent.com/JohnMorales/dotfiles/master/colors/24-bit-color.sh | bash"
 
 # Additional custome software command
 alias clashon="nohup clash -f ~/.config/clash/paoluyun.yaml > ~/.config/clash/nohupClash.log &"
