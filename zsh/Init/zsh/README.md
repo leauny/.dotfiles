@@ -1,9 +1,6 @@
-
-> zsh 及其附属插件/主题等安装介绍操作手册
-
 ## Zsh
 
-`sudo pacman -S zsh`
+> zsh 及其附属插件/主题等安装介绍操作手册
 
 ## oh-my-zsh
 
