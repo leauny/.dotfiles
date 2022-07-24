@@ -1,0 +1,7 @@
+[user]
+	email = leauny@outlook.com
+	name = leauny
+[core]
+	editor = vim
+[alias]
+	last = log -1 HEAD
