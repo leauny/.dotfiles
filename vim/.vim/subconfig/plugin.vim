@@ -18,7 +18,7 @@ call plug#begin('~/.vim/plugged')
 " 文件树
 Plug 'preservim/nerdtree'
 " 自动补全
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " 显示函数列表
 Plug 'preservim/tagbar'
 " 浏览文件编辑历史

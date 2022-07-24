@@ -66,5 +66,7 @@ noremap tu :+tabnext<CR>
 " 按两次<LEADER>后跳转到下一个'<++>'格式的锚点并且编辑它
 map <LEADER><LEADER> <ESC>/<++><CR>:nohlsearch<CR>c4l
 
-
+"" 常用小功能
+" 强制用root权限保存更改
+nnoremap <LEADER>sudo :w !sudo tee > /dev/null %<CR>
 
