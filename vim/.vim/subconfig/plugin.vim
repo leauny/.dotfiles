@@ -40,7 +40,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'machakann/vim-highlightedyank'
 " 快捷注释
 Plug 'preservim/nerdcommenter'
-
+" tmux无缝体验
+Plug 'christoomey/vim-tmux-navigator'
 
 
 " ------------------------- 美化类 ----------------------------
