@@ -23,8 +23,6 @@ Plug 'preservim/nerdtree'
 Plug 'preservim/tagbar'
 " 浏览文件编辑历史
 Plug 'mbbill/undotree'
-" Markdown预览 (图形界面)
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 " Markdown预览 (命令行界面)
 " Plug 'ellisonleao/glow.nvim', {'branch': 'main'} " for nvim
 Plug 'jclsn/glow.vim' " for vim
@@ -66,7 +64,6 @@ so $HOME/.vim/subconfig/plugins/nord-vim.vim
 so $HOME/.vim/subconfig/plugins/onedark.vim.vim
 so $HOME/.vim/subconfig/plugins/vim-snazzy.vim
 so $HOME/.vim/subconfig/plugins/vim-airline.vim
-so $HOME/.vim/subconfig/plugins/markdown-preview.nvim.vim
 so $HOME/.vim/subconfig/plugins/nerdtree.vim
 so $HOME/.vim/subconfig/plugins/coc.nvim.vim
 so $HOME/.vim/subconfig/plugins/tagbar.vim
