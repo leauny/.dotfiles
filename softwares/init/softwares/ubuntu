@@ -1,0 +1,29 @@
+# common
+vim
+neovim
+exa
+net-tools
+mosh
+bat
+zsh
+stow
+fzf
+ranger
+dust
+duf
+bottom
+
+# dev
+git
+git-delta
+make
+cmake
+llvm
+clang
+clangd
+clang-tidy
+clang-format
+gcc
+gdb
+g++
+build-essential
