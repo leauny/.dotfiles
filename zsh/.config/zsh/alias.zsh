@@ -26,6 +26,8 @@ alias glog="git log --oneline --graph --all --abbrev"
 alias truecolor="curl -s https://raw.githubusercontent.com/JohnMorales/dotfiles/master/colors/24-bit-color.sh | bash"
 
 # Additional custome software command
+alias ls='exa '
+alias la='ls -lah'
 alias clashon="nohup clash -f ~/.config/clash/paoluyun.yaml > ~/.config/clash/nohupClash.log &"
 alias clashlog="tail -n 10 -f ~/.config/clash/nohupClash.log"
 alias winproxy="proxychains4 -f ~/.config/proxy/winproxy.conf "

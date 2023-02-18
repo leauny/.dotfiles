@@ -2,6 +2,10 @@
 
 > zsh 及其附属插件/主题等安装介绍操作手册
 
+## require
+
+- exa: modern ls
+
 ## oh-my-zsh
 
 > 本地脚本(可以直接运行安装): [oh-my-zsh install](./ohmyzshInstall.sh)
