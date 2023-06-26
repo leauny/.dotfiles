@@ -13,7 +13,7 @@ export DIR_OF_DOTFILES="$HOME/.dotfiles"
 # ---------------------------------------------------------------
 
 # 默认启动tmux
-if [ $CUST_TMUX = ON ]
+if [[ "$CUST_TMUX" == "ON" ]]
 then
     source $HOME/.config/zsh/tmux.zsh
 fi
@@ -65,7 +65,7 @@ source $HOME/.config/zsh/alias.zsh
 source $HOME/.config/zsh/conda.zsh
 
 # 加载fzf
-[ -f ~/.config/zsh/fzf.zsh ] && source ~/.config/zsh/fzf.zsh  
+[[ -f ~/.config/zsh/fzf.zsh ]] && source ~/.config/zsh/fzf.zsh  
 
 # 加载autojump
 
