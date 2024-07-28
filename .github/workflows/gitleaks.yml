@@ -3,8 +3,7 @@ on:
   pull_request:
   push:
   workflow_dispatch:
-  schedule:
-    - cron: "0 10 * * *" # run once a day at 2 AM (UTC Time 10)
+
 jobs:
   scan:
     name: gitleaks
