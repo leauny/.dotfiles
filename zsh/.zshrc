@@ -18,6 +18,12 @@ then
     source $HOME/.config/zsh/tmux.zsh
 fi
 
+# SSH下默认启动tmux
+if [[ -n "$SSH_CONNECTION" ]] && [[ -z "$TMUX" ]]; then
+    # 如果已经存在 tmux 会话，则连接到该会话
+    tmux attach-session -t ssh-default || tmux new-session -s ssh-default
+fi
+
 # ---------------------------------------------------------------
 #                            ZSH配置
 # ---------------------------------------------------------------
