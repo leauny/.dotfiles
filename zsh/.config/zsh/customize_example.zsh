@@ -7,3 +7,5 @@ export CUST_TMUX=ON
 # 配置文件git文件夹路径
 export DIR_OF_DOTFILES="$HOME/.dotfiles"
 
+# 配置常用应用安装位置
+export CONDA_HOME="/opt/libs"

@@ -1,4 +1,16 @@
 # ---------------------------------------------------------------
+#                            Util
+# ---------------------------------------------------------------
+
+source $HOME/.config/zsh/util.zsh
+
+# ---------------------------------------------------------------
+#                            Homebrew
+# ---------------------------------------------------------------
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# ---------------------------------------------------------------
 #                            自定义配置
 # ---------------------------------------------------------------
 
@@ -51,7 +63,7 @@ fi
 # 通用环境变量
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$PATH"
+export PATH=$HOME/.local/bin:$PATH
 
 # 用户自定义环境变量
 source $HOME/.config/zsh/path.zsh
@@ -70,5 +82,10 @@ source $HOME/.config/zsh/alias.zsh
 # 加载Conda
 source $HOME/.config/zsh/conda.zsh
 
-# 加载fzf
-[[ -f ~/.config/zsh/fzf.zsh ]] && source ~/.config/zsh/fzf.zsh  
+# 加载fzf (依赖 fd-find)
+## sudo apt install fd-find
+## ln -s $(which fdfind) ~/.local/bin/fd
+source <(fzf --zsh)
+
+# 加载atuin
+eval "$(atuin init zsh)"
