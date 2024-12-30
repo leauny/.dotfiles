@@ -57,5 +57,6 @@ plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
+eval "$(zoxide init zsh)"
 
 source $ZSH/oh-my-zsh.sh

@@ -1,0 +1,19 @@
+# 补全忽略大小写
+set completion-ignore-case On
+
+# 显示所有补全
+set show-all-if-ambiguous On
+
+# 连击Tab时循环现实
+set menu-complete-display-prefix On 
+TAB:menu-complete
+
+# 显示文件夹软连接为文件夹样式
+set mark-symlinked-directories On 
+
+# 按目录层级删除
+Control-g:unix-filename-rubout
+
+# 历史记录
+Control-p:history-search-backward
+Control-n:history-search-forward

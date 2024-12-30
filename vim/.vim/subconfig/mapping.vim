@@ -49,6 +49,9 @@ noremap <DOWN> :res -5<CR>
 noremap <LEFT> :vertical resize -5<CR>
 noremap <RIGHT> :vertical resize +5<CR>
 
+" jk发送<ESC>
+inoremap jk <ESC>
+
 " 分屏位置交换
 noremap <C-w><RIGHT> <C-w>L
 noremap <C-w><LEFT> <C-w>H

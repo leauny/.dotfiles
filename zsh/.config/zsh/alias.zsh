@@ -11,15 +11,18 @@
 alias sudo='sudo ' # Helps sys continue check if the following command has been aliased. (because of the space at the end os the alias command)
 alias cp="cp -i"
 alias rm="rm -i" # prompt once
+# alias rm="trash-put -v -- "
 alias vi="vim "
 alias vzsh="vim ~/.zshrc"
 alias szsh="source ~/.zshrc"
 alias vvim="vim ~/.vim/vimrc"
+alias psp="ps -aux | grep -v grep | grep "
 alias .="cd ."
 alias ..="cd .."
 alias his="cat ~/.zsh_history | grep "
+alias bat="batcat "
 alias gs="git status"
-alias ga="git add "
+alias ga="git add"
 alias gclone="git clone "
 alias gc="git commit -m "
 alias glog="git log --oneline --graph --all --abbrev"
@@ -28,6 +31,7 @@ alias truecolor="curl -s https://raw.githubusercontent.com/JohnMorales/dotfiles/
 # Additional custome software command
 alias ls='exa '
 alias la='ls -lah'
+alias brightness='sudo ddcutil setvcp 10 '
 alias clashon="nohup clash -f ~/.config/clash/paoluyun.yaml > ~/.config/clash/nohupClash.log &"
 alias clashlog="tail -n 10 -f ~/.config/clash/nohupClash.log"
 alias winproxy="proxychains4 -f ~/.config/proxy/winproxy.conf "
@@ -37,6 +41,8 @@ alias d2l="conda activate d2l-zh"
 alias jn="conda activate d2l-zh && nohup jupyter notebook > ~/.log/jupyter.log &"
 alias sstow="stow --dir=$DIR_OF_DOTFILES "
 alias glow="glow -p "
+alias dockers="cd ~/.config/dockers"
 
-
-
+# Functions
+s2c () { scp "$@" ${SSH_CLIENT%% * }:~/; }
+c2s () { scp ${SSH_CLIENT%% *}:"$@" .; }

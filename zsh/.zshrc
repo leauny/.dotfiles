@@ -72,9 +72,3 @@ source $HOME/.config/zsh/conda.zsh
 
 # 加载fzf
 [[ -f ~/.config/zsh/fzf.zsh ]] && source ~/.config/zsh/fzf.zsh  
-
-# 加载autojump
-
-# autojump
-[[ -s /home/$CUST_USER/.autojump/etc/profile.d/autojump.sh ]] && source /home/$CUST_USER/.autojump/etc/profile.d/autojump.sh
-autoload -U compinit && compinit -U
