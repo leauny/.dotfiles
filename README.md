@@ -1,10 +1,13 @@
 # DotFiles
 
-This repository manages dotfiles by using stow.
+本项目为个人使用的 dotfile 仓库，基于 GNU Stow 管理
 
-## Guide
+> [!WARNING]
+> 项目内使用了 `.stowrc`，会改变默认行为
 
-### Command
+## 使用教程
+
+### 命令
 
 > 详细使用方法请查看[StowIntro](./StowIntro.md)
 
@@ -17,9 +20,3 @@ stow -t <TargetDir> <PackageName>
 ```shell
 stow -t ~ zsh
 ```
-
-## Target Dir
-
-The default target directory id $HOME (set by `.stowrc`) if the folder name ending with no extra expression such as '@'.
-
-When need stowing in different position, the folder names' tail would end by '@'. Then you should get into the subdirectory and check the target directory in its own `.stowrc` file.
