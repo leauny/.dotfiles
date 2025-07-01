@@ -17,3 +17,7 @@ Control-g:unix-filename-rubout
 # 历史记录
 Control-p:history-search-backward
 Control-n:history-search-forward
+
+# shift+上下键 搜索历史记录
+"\e[1;2A": history-search-backward
+"\e[1;2B": history-search-forward
