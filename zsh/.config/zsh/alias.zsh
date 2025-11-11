@@ -8,7 +8,6 @@
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Common command
-alias sudo='sudo ' # Helps sys continue check if the following command has been aliased. (because of the space at the end os the alias command)
 alias cp="cp -i"
 alias rm="rm -i" # prompt once
 # alias rm="trash-put -v -- "
@@ -32,17 +31,20 @@ alias truecolor="curl -s https://raw.githubusercontent.com/JohnMorales/dotfiles/
 alias ls='exa '
 alias la='ls -lah'
 alias brightness='sudo ddcutil setvcp 10 '
-alias clashon="nohup clash -f ~/.config/clash/paoluyun.yaml > ~/.config/clash/nohupClash.log &"
-alias clashlog="tail -n 10 -f ~/.config/clash/nohupClash.log"
 alias winproxy="proxychains4 -f ~/.config/proxy/winproxy.conf "
 alias linproxy="proxychains4 -f ~/.config/proxy/linproxy.conf "
-alias clashupdate="~/.config/clash/paoluyun.sh"
-alias d2l="conda activate d2l-zh"
-alias jn="conda activate d2l-zh && nohup jupyter notebook > ~/.log/jupyter.log &"
 alias sstow="stow --dir=$DIR_OF_DOTFILES "
 alias glow="glow -p "
-alias dockers="cd ~/.config/dockers"
 
 # Functions
-s2c () { scp "$@" ${SSH_CLIENT%% * }:~/; }
-c2s () { scp ${SSH_CLIENT%% *}:"$@" .; }
+s2c() { scp "$@" ${SSH_CLIENT%% * }:~/; }
+c2s() { scp ${SSH_CLIENT%% *}:"$@" .; }
+proxy() {
+	if [[ "$#" -lt 1 ]]; then
+		echo "enable proxy"
+		export ALL_PROXY="socks5h://127.0.0.1:7890"
+	else
+		echo "unset proxy"
+		unset ALL_PROXY
+	fi
+}

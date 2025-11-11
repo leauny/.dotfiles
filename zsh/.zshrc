@@ -1,7 +1,6 @@
 # ---------------------------------------------------------------
 #                            Util
 # ---------------------------------------------------------------
-
 source $HOME/.config/zsh/util.zsh
 
 # ---------------------------------------------------------------
@@ -14,26 +13,24 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 #                            自定义配置
 # ---------------------------------------------------------------
 
-# 配置模板位于 ~/.config/zsh/customize_example.zsh, 用于控制功能的开关 
+# 配置模板位于 ~/.config/zsh/customize_example.zsh, 用于控制功能的开关
 source $HOME/.config/zsh/customize.zsh
 # 配置文件git文件夹路径
 export DIR_OF_DOTFILES="$HOME/.dotfiles"
 
-
 # ---------------------------------------------------------------
-#                            前置加载项 
+#                            前置加载项
 # ---------------------------------------------------------------
 
 # 默认启动tmux
-if [[ "$CUST_TMUX" == "ON" ]]
-then
-    source $HOME/.config/zsh/tmux.zsh
+if [[ "$CUST_TMUX" == "ON" ]]; then
+	source $HOME/.config/zsh/tmux.zsh
 fi
 
-# SSH下默认启动tmux
-if [[ -n "$SSH_CONNECTION" ]] && [[ -z "$TMUX" ]]; then
-    # 如果已经存在 tmux 会话，则连接到该会话
-    tmux attach-session -t ssh-default || tmux new-session -s ssh-default
+# SSH下且非scode时默认启动tmux
+if [[ -n "$SSH_CONNECTION" ]] && [[ -z "$TMUX" ]] && [[ -z "$VSCODE_IPC_HOOK_CLI" ]]; then
+	# 如果已经存在 tmux 会话，则连接到该会话
+	tmux attach-session -t ssh-default || tmux new-session -s ssh-default
 fi
 
 # ---------------------------------------------------------------
@@ -51,9 +48,9 @@ export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+	export EDITOR='vim'
 else
-  export EDITOR='vim'
+	export EDITOR='vim'
 fi
 
 # ---------------------------------------------------------------
@@ -63,13 +60,13 @@ fi
 # 通用环境变量
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/go/bin:$PATH
 
 # 用户自定义环境变量
 source $HOME/.config/zsh/path.zsh
 
 # ---------------------------------------------------------------
-#                             别名alias 
+#                             别名alias
 # ---------------------------------------------------------------
 
 # 必须靠后, 依赖上面定义的变量
@@ -79,8 +76,8 @@ source $HOME/.config/zsh/alias.zsh
 #                            应用配置&加载
 # ---------------------------------------------------------------
 
-# 加载Conda
-source $HOME/.config/zsh/conda.zsh
+# 加载Conda(弃用，使用uv)
+# source $HOME/.config/zsh/conda.zsh
 
 # 加载fzf (依赖 fd-find)
 ## sudo apt install fd-find
@@ -88,4 +85,5 @@ source $HOME/.config/zsh/conda.zsh
 source <(fzf --zsh)
 
 # 加载atuin
+source ~/.atuin/bin/env
 eval "$(atuin init zsh)"
